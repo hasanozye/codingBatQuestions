@@ -15,6 +15,32 @@ public class XyzMiddle {
     }
 
 
+    //    alterantive approach
+    public static boolean xyzMiddle(String str) {
+        int len = str.length();
+
+        // Check if the string length is less than 3
+        if (len < 3) {
+            return false;
+        }
+
+        // Iterate through the possible middle positions
+        for (int i = 0; i <= len - 3; i++) {
+            // Check if "xyz" appears around the current middle position
+            if (str.substring(i, i + 3).equals("xyz")) {
+                // Check if the number of chars to the left and right differs by at most one
+                int leftCount = i;
+                int rightCount = len - i - 3;
+
+                if (Math.abs(leftCount - rightCount) <= 1) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+     /*
     public static boolean xyzMiddle(String str) {
 
         boolean flag = false;
@@ -51,7 +77,8 @@ public class XyzMiddle {
 
         return flag;
     }
-        /*
+      */
+        /* this solution is false
         boolean flag = false;
 
         if (str.length() < 3) {
@@ -108,3 +135,4 @@ public class XyzMiddle {
 
 
 }
+
