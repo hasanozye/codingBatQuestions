@@ -2,7 +2,9 @@ package string2;
 
 public class SameStarChar {
     public static void main(String[] args) {
-
+        System.out.println(sameStarChar("xy*yzz"));// → true
+        System.out.println(sameStarChar("xy*zzz"));// → false
+        System.out.println(sameStarChar("*xa*az"));// → true
     }
 
 
@@ -10,14 +12,17 @@ public class SameStarChar {
 
         int len = str.length();
 
-        for (int i = 0; i < len; i++) {
+        for (int i = 1; i < len-1; i++) {
 
-            int firstStarIndex = str.indexOf("*");
-            int lastStarIndex = str.lastIndexOf("*");
+            if (str.charAt(i) == '*'){
+
+                if (str.charAt(i-1) != str.charAt(i+1)){
+                    return false;
+                }
+            }
 
         }
-//TODO: UNDERSTAND THE PROBLEM.
-        return false;
+        return true;
     }
 
 }
