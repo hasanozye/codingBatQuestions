@@ -12,7 +12,7 @@ public class OneTwo {
 
         int len = str.length();
         String result = "";
-        char ch = 0;
+        char ch = 1;
 
 
         for (int i = 0; i <= len - 3; i += 3) {
