@@ -20,6 +20,7 @@ public class OneTwo {
 
             result += str.substring(i + 1, i + 3);
             ch = str.charAt(i);
+
         }
 
         return result + ch;
