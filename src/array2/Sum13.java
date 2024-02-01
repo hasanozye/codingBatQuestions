@@ -30,6 +30,25 @@ public class Sum13 {
             sum += arr[i];
 
         }
+        /* bard solution which is very good
+        int sum = 0;
+        boolean isUnlucky = false;
+
+        for (int num : nums) {
+            if (isUnlucky) {
+                isUnlucky = false;  // Skip the number after 13
+                continue;
+            }
+
+            if (num == 13) {
+                isUnlucky = true;
+            } else {
+                sum += num;
+            }
+        }
+
+        return sum;
+         */
 
 /*        for(int n: arr){
 
