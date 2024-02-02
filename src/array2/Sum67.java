@@ -11,30 +11,20 @@ public class Sum67 {
 
 
     public static int sum67(int[] nums) {
-
         int sum = 0;
+        boolean ignoreSection = false;
 
-        for (int i = 0; i < nums.length; i++) {
-
-            if (nums[i] == 6) { // 4. index
-
-                for (int j = i; j < nums.length; j++) {
-                    if (nums[j] == 7) {
-                        break;
-
-                    }
-                    i++;
-
-                }
-
+        for (int num : nums) {
+            if (num == 6) {
+                ignoreSection = true;
+            } else if (num == 7 && ignoreSection) {
+                ignoreSection = false;
+            } else if (!ignoreSection) {
+                sum += num;
             }
-            if (nums[i] != 6 && nums[i] != 7) {
-                sum += nums[i];
-            }
-
         }
+
         return sum;
-        //TODO: Solve this mf. this ain't workin for cretain test cases.
     }
 
 }
