@@ -17,7 +17,7 @@ public class FizzArray {
 
         for (int i = 0; i < n; i++) {
 
-            arr[i] += i;
+            arr[i] = i;
 
         }
 
