@@ -13,7 +13,25 @@ public class No14 {
 
     public static boolean no14(int[] nums) {
 
-        boolean is1or4 = false;
+        boolean hasOne = false;
+        boolean hasFour = false;
+
+        for (int num : nums) {
+            if (num == 1) {
+                hasOne = true;
+            } else if (num == 4) {
+                hasFour = true;
+            }
+
+            if (hasOne && hasFour) {
+                return false;
+            }
+        }
+
+        return true;
+
+
+        /*boolean is1or4 = false;
 
         for (int i = 0; i < nums.length; i++) {
 
@@ -42,7 +60,7 @@ public class No14 {
             }
 
         }
-        return true;
+        return true;*/
 
     }
 }
