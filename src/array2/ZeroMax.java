@@ -15,31 +15,14 @@ public class ZeroMax {
     public static int[] zeroMax(int[] nums) {
 
 
-        boolean is0Found = false;
-        boolean isOddAfter0Found = false;
-        int indexOfZero = 0;
-        int indexOfOdd = 0;
+        int maxOdd = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-
+        for (int i = nums.length - 1; i >= 0; i--) {
             if (nums[i] == 0) {
-                is0Found = true;
-                indexOfZero = i;
+                nums[i] = maxOdd;
+            } else if (nums[i] % 2 != 0 && nums[i] > maxOdd) {
+                maxOdd = nums[i];
             }
-
-            if (is0Found && nums[i] % 2 != 0) {
-
-                isOddAfter0Found = true;
-                indexOfOdd = i;
-
-            }
-
-            if (is0Found && isOddAfter0Found && nums[i] % 2 != 0) {
-
-                nums[indexOfZero] = nums[indexOfOdd];
-
-            }
-
         }
 
         return nums;
