@@ -19,27 +19,14 @@ public class MakeBricks {
 
     public static boolean makeBricks(int small, int big, int goal) {
 
-        int bigInch = big * 5;
-        int i = 0;
+        // Calculate the max number of big bricks that can be used
+        int maxBigBricksNeeded = goal / 5;
+        int bigBricksUsed = Math.min(maxBigBricksNeeded, big);
 
-        if (big >= 1) {
-            for (i = 5; i < bigInch; i += 5) {
+        // Calculate the remaining goal after using big bricks
+        int goalRemaining = goal - (bigBricksUsed * 5);
 
-                if (i + small == goal || big == goal || bigInch == goal) {
-                    return true;
-                }
-            }
-        }
-        
-        
-        for (int j = 1; j <= small; j++) {
-
-            if (i+j == goal){
-                return true;
-            }
-
-        }
-
-        return false;
+        // Check if we have enough small bricks to cover the remaining goal
+        return small >= goalRemaining;
     }
 }
