@@ -5,7 +5,7 @@ public class NotReplace {
     public static String notReplace(String str) {
         // Use regular expression with word boundary (\b) to find standalone "is"
         // and replace with "is not"
-//        return str.replaceAll("\\bis\\b", "is not");
+//        return str.replaceAll("\\bis\\b", "is not");xxx
         String fin = "";
         int i = 0;
         while (i < str.length()) {
