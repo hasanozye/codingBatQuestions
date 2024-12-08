@@ -1,6 +1,6 @@
 package warmup1;
 
-public class sleepIn {
+public class SleepIn {
 
     public static void main(String[] args) {
 
